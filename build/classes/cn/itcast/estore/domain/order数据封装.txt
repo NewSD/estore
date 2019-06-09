@@ -1,0 +1,114 @@
+输出list<Order>
+Order [oid=3e605593df3e4d63892114fb8aebaf5a, total=101.0, ordertime=2017-11-02 17:56:43.0, state=1, addr=null, user=null, orderItems=[]]
+Order [oid=8762458c2f8b4292905b7114691349cc, total=80.0, ordertime=2017-11-02 17:56:31.0, state=1, addr=null, user=null, orderItems=[]]
+Order [oid=f96c7e29fd96496cae19593410f1594f, total=50.0, ordertime=2017-11-02 17:56:24.0, state=1, addr=null, user=null, orderItems=[]]
+Order [oid=a7a9ab4d387543e7b5cf34efc421b02f, total=50.0, ordertime=2017-11-02 17:48:34.0, state=1, addr=null, user=null, orderItems=[]]
+
+SELECT * FROM orderitem o,book b WHERE o.bid = b.bid AND o.oid='3e605593df3e4d63892114fb8aebaf5a';
+itemid 							count subtotal bid           oid					bid1 bname  price author  image        cid  isdel
+0012c34899c445fcbc644273238441eb	1	28	003	3e605593df3e4d63892114fb8aebaf5a	003	薄环凉色	28	甄嬛	book_img/yq1.jpg	2	0
+173e570cf4ad425799e627864383d40c	1	73	005	3e605593df3e4d63892114fb8aebaf5a	005	你懂我的爱	73	莫言	book_img/yq2.jpg	2	0
+
+
+输出oid为..3e605593df3e4d63892114fb8aebaf5a
+输出oid为..8762458c2f8b4292905b7114691349cc
+输出oid为..f96c7e29fd96496cae19593410f1594f
+输出oid为..a7a9ab4d387543e7b5cf34efc421b02f
+
+
+输出map...
+//图书book
+bid.....003
+bname.....薄环凉色
+price.....28.00
+author.....甄嬛
+image.....book_img/yq1.jpg
+cid.....2
+isdel.....false
+
+//订单Order
+oid.....3e605593df3e4d63892114fb8aebaf5a
+
+//订单项OrderItem
+itemid.....0012c34899c445fcbc644273238441eb
+count.....1
+subtotal.....28.00
+
+
+输出map...
+bname.....你懂我的爱
+author.....莫言
+price.....73.00
+count.....1
+oid.....3e605593df3e4d63892114fb8aebaf5a
+isdel.....false
+image.....book_img/yq2.jpg
+itemid.....173e570cf4ad425799e627864383d40c
+subtotal.....73.00
+cid.....2
+bid.....005
+输出map...
+bname.....剑逆苍穹
+author.....大法官
+price.....40.00
+count.....2
+oid.....8762458c2f8b4292905b7114691349cc
+isdel.....false
+image.....book_img/xh2.jpg
+itemid.....1d6300f31a3d4fb2940bac360ae9658e
+subtotal.....80.00
+cid.....1
+bid.....002
+输出map...
+bname.....封神榜
+author.....姜子牙
+price.....50.00
+count.....1
+oid.....f96c7e29fd96496cae19593410f1594f
+isdel.....false
+image.....book_img/xh1.jpg
+itemid.....4ec0c81947f04ebb964836581e8a67ac
+subtotal.....50.00
+cid.....1
+bid.....001
+输出map...
+bname.....封神榜
+author.....姜子牙
+price.....50.00
+count.....1
+oid.....a7a9ab4d387543e7b5cf34efc421b02f
+isdel.....false
+image.....book_img/xh1.jpg
+itemid.....ccdb781bffed4e47a73e0ec247068e33
+subtotal.....50.00
+cid.....1
+bid.....001
+
+
+
+Order [oid=3e605593df3e4d63892114fb8aebaf5a, total=101.0, ordertime=2017-11-02 17:56:43.0, state=1, addr=null, user=null,
+	orderItems=[
+		OrderItem [itemid=0012c34899c445fcbc644273238441eb, count=1, subtotal=28.0,
+			book=Book [bid=003, bname=薄环凉色, price=28.0, author=甄嬛, image=book_img/yq1.jpg, cid=2, isdel=0], order=3e605593df3e4d63892114fb8aebaf5a], 
+		OrderItem [itemid=173e570cf4ad425799e627864383d40c, count=1, subtotal=73.0, 
+			book=Book [bid=005, bname=你懂我的爱, price=73.0, author=莫言, image=book_img/yq2.jpg, cid=2, isdel=0], order=3e605593df3e4d63892114fb8aebaf5a]
+	]
+]
+Order [oid=8762458c2f8b4292905b7114691349cc, total=80.0, ordertime=2017-11-02 17:56:31.0, state=1, addr=null, user=null,
+ orderItems=[
+ 	OrderItem [itemid=1d6300f31a3d4fb2940bac360ae9658e, count=2, subtotal=80.0, 
+ 		book=Book [bid=002, bname=剑逆苍穹, price=40.0, author=大法官, image=book_img/xh2.jpg, cid=1, isdel=0], order=8762458c2f8b4292905b7114691349cc]
+ 	]
+]
+Order [oid=f96c7e29fd96496cae19593410f1594f, total=50.0, ordertime=2017-11-02 17:56:24.0, state=1, addr=null, user=null, 
+	orderItems=[
+		OrderItem [itemid=4ec0c81947f04ebb964836581e8a67ac, count=1, subtotal=50.0, 
+			book=Book [bid=001, bname=封神榜, price=50.0, author=姜子牙, image=book_img/xh1.jpg, cid=1, isdel=0], order=f96c7e29fd96496cae19593410f1594f]	
+	]
+]
+Order [oid=a7a9ab4d387543e7b5cf34efc421b02f, total=50.0, ordertime=2017-11-02 17:48:34.0, state=1, addr=null, user=null, 
+	orderItems=[
+		OrderItem [itemid=ccdb781bffed4e47a73e0ec247068e33, count=1, subtotal=50.0, 
+			book=Book [bid=001, bname=封神榜, price=50.0, author=姜子牙, image=book_img/xh1.jpg, cid=1, isdel=0], order=a7a9ab4d387543e7b5cf34efc421b02f]	
+	]		
+]
